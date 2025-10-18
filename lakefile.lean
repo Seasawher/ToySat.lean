@@ -3,6 +3,9 @@ open Lake DSL
 
 package "ToySat" where
   version := v!"0.1.0"
+  leanOptions := #[
+    ⟨`linter.missingDocs, true⟩
+  ]
 
 @[default_target]
 lean_lib «ToySat» where

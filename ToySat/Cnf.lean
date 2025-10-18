@@ -1,13 +1,13 @@
 
-/--
-CNFの節。各 `v : Option Bool` は変数が現れるかどうかと、極性を表す。
-* `none` は変数が現れないことを表す
-* `some true` は肯定的に現れることを表す
-* `some false` は否定的に現れることを表す
+/-- リテラル。変数と変数の否定。-/
+structure Lit (α : Type) where
+  /-- 変数名 -/
+  var : α
+  /-- 極性。`true` なら肯定で、`false` なら否定 -/
+  polarity : Bool
 
-引数の `n` は変数の数を表す。
--/
-def Clause (n : Nat) := Vector (Option Bool) n
+/-- CNFの節 -/
+def Clause (α : Type) := List (Lit α)
 
-/-- n 変数で m 個の節からなる CNF -/
-def Cnf (n m : Nat) := Vector (Clause n) m
+/-- CNF -/
+def Cnf (α : Type) := List (Clause α)
