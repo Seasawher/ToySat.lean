@@ -13,20 +13,20 @@ DIMACS CNF フォーマットとは、CNF標準形の論理式をテキストで
   普通は各節が１行を占めるが、長い節は複数行にまたがってもよい。
 -/
 
-declare_syntax_cat dimacs
+-- declare_syntax_cat dimacs
 
-declare_syntax_cat dimacs_header
-syntax "p" "cnf" num num : dimacs_header
+-- declare_syntax_cat dimacs_header
+-- syntax "p" "cnf" num num : dimacs_header
 
-declare_syntax_cat dimacs_clause
-syntax (("-" noWs)? num)+ : dimacs_clause
+-- declare_syntax_cat dimacs_clause
+-- syntax (("-" noWs)? num)+ : dimacs_clause
 
-syntax dimacs_header dimacs_clause* : dimacs
+-- syntax dimacs_header dimacs_clause* : dimacs
 
-syntax "[dimacs| " dimacs "]" : term
+-- syntax "[dimacs| " dimacs "]" : term
 
-#check_failure [dimacs|
-  p cnf 3 2
-  1 -3 0
-  2 3 -1 0
-]
+-- #check_failure [dimacs|
+--   p cnf 3 2
+--   1 -3 0
+--   2 3 -1 0
+-- ]

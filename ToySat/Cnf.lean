@@ -1,3 +1,4 @@
+namespace ToySat
 
 /-- リテラル。変数と変数の否定。-/
 structure Lit (α : Type) where
@@ -7,7 +8,9 @@ structure Lit (α : Type) where
   polarity : Bool
 
 /-- CNFの節 -/
-def Clause (α : Type) := List (Lit α)
+abbrev Clause (α : Type) := Array (Lit α)
 
 /-- CNF -/
-def Cnf (α : Type) := List (Clause α)
+abbrev Cnf (α : Type) := Array (Clause α)
+
+end ToySat
